@@ -1,5 +1,5 @@
 ./node_modules
-./input/*
-./output/*
+./input/**
+./output/**
 
 ./package-lock.json
