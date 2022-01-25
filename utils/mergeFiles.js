@@ -13,13 +13,13 @@ const mergeFiles = async (dirPath) => {
             const buffer = fs.readFileSync(dirPath + '/' + file);
             const fileContent = buffer.toString();
 
-            newEntries.push(fileContent);
+            newEntries.push(JSON.stringify(JSON.parse(fileContent)));
 
             // files.push(dirPath + '/' + file);
         }
     });
 
-    fs.writeFile(outputPath, '[' + newEntries.toString() + ']', function (err) {
+    fs.writeFile(outputPath, '[' + newEntries.join(',') + ']', function (err) {
       if (err) throw err;
       console.log('Saved!');
     });      
