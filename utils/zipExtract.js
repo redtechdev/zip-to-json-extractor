@@ -6,11 +6,10 @@ const readZipArchive = async (filepath) => {
   try {
     const zip = new AdmZip(filepath);
     const allEntries = zip.getEntries();
-    let count = 0;
 
     // const fileName = new Date().toUTCString();
     // console.log({fileName});
-    const outputPath = './output/somefile.json';
+    const outputPath = './output/testfile.json';
 
     let newEntries = [];
 
